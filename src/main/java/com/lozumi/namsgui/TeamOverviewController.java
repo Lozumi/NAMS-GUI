@@ -47,6 +47,7 @@ public class TeamOverviewController {
     private TeamParser teamParser;
 
     private ObservableList<Team> teamList = FXCollections.observableArrayList();
+    private Team chosenTeam;
 
 
     // Event handler for the Choose button
@@ -105,14 +106,20 @@ public class TeamOverviewController {
 
         //默认展示第一个队伍
         teamComboBox.setValue(teamList.get(0));
+        chosenTeam=teamList.get(0);
+    }
+
+
+    @FXML
+    private void TeamComboBoxChosen(){
         // 选择监听器，可以在选择不同团队时进行相应操作
         teamComboBox.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
                     showTeamDetails(newValue);
+                    chosenTeam = newValue;
                     //updateChosenTeamTextArea(newValue);
                 });
     }
-
 
     // Event handler for the Parse button
     @FXML
@@ -124,14 +131,11 @@ public class TeamOverviewController {
 
         // Perform parsing based on selected format (plain text, XML, HTML)
         if (plainTextRadioButton.isSelected()) {
-            // Implement plain text parsing logic
-            // Example: mainApp.parsePlainText(chosenFile);
+            resultTextArea.setText(PlainTextTeamFormatter.getSingletonInstance().formatTeam(chosenTeam));
         } else if (xmlRadioButton.isSelected()) {
-            // Implement XML parsing logic
-            // Example: mainApp.parseXML(chosenFile);
+            resultTextArea.setText(XMLTeamFormatter.getSingletonInstance().formatTeam(chosenTeam));
         } else if (htmlRadioButton.isSelected()) {
-            // Implement HTML parsing logic
-            // Example: mainApp.parseHTML(chosenFile);
+            resultTextArea.setText(HTMLTeamFormatter.getSingletonInstance().formatTeam(chosenTeam));
         } else {
             showAlert("请选择解析格式。");
         }
