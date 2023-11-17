@@ -71,6 +71,7 @@ public class TeamOverviewController {
         // 提供一个下拉栏选择团队列表里的一个团队
 
         // 将观察列表数据添加到下拉框中
+        // 使用 StringConverter 只是负责将对象在界面上显示为字符串和从字符串转换为对象，对于 ObservableList 的操作并没有影响。 StringConverter 主要是用于处理对象在 UI 上的显示和输入。
         teamComboBox.setItems(teamList);
         // 自定义下拉框中每个选项的显示，只显示团队名
 //        teamComboBox.setCellFactory(new Callback<ListView<Team>, ListCell<Team>>() {
@@ -101,6 +102,8 @@ public class TeamOverviewController {
                 return null;
             }
         });
+
+        //默认展示第一个队伍
         teamComboBox.setValue(teamList.get(0));
         // 选择监听器，可以在选择不同团队时进行相应操作
         teamComboBox.getSelectionModel().selectedItemProperty().addListener(
