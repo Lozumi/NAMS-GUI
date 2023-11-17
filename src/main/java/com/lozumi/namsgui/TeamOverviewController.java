@@ -1,29 +1,20 @@
 package com.lozumi.namsgui;
 
-import javafx.event.ActionEvent;
+import com.lozumi.namsgui.model.Team;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ComboBox;
 import javafx.util.Callback;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
-import com.lozumi.namsgui.MainApp;
-import com.lozumi.namsgui.model.*;
 
 public class TeamOverviewController {
     @FXML
     private TextArea resultTextArea;
     @FXML
     private TextArea chosenTextArea;
-    private TextArea chosenTeamTextArea;
-
     @FXML
     private RadioButton plainTextRadioButton;
 
@@ -42,6 +33,10 @@ public class TeamOverviewController {
     @FXML
     private Button resetButton;
 
+    @FXML
+    private ComboBox<Team> teamComboBox;
+
+
     // Reference to the main application.
     private MainApp mainApp;
 
@@ -49,8 +44,6 @@ public class TeamOverviewController {
     private File chosenFile;
 
     private TeamParser teamParser;
-
-    private ComboBox<Team> teamComboBox;
 
     private ObservableList<Team> teamList = FXCollections.observableArrayList();
 
@@ -126,6 +119,7 @@ public class TeamOverviewController {
             showAlert("请选择解析格式。");
         }
     }
+
     /**
      * Called when the user clicks the "重置" button.
      */
@@ -151,7 +145,7 @@ public class TeamOverviewController {
         // 在此处添加显示团队详情的逻辑，可以更新其他界面元素
     }
 
-//    private void updateChosenTeamTextArea(Team team) {
+    //    private void updateChosenTeamTextArea(Team team) {
 //        if (team != null) {
 //            chosenTeamTextArea.setText("已选择的团队名：" + team.getTeamName());
 //        } else {
