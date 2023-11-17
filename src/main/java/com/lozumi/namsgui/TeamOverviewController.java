@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 import java.io.File;
 
@@ -72,22 +73,35 @@ public class TeamOverviewController {
         // 将观察列表数据添加到下拉框中
         teamComboBox.setItems(teamList);
         // 自定义下拉框中每个选项的显示，只显示团队名
-        teamComboBox.setCellFactory(new Callback<ListView<Team>, ListCell<Team>>() {
+//        teamComboBox.setCellFactory(new Callback<ListView<Team>, ListCell<Team>>() {
+//            @Override
+//            public ListCell<Team> call(ListView<Team> param) {
+//                return new ListCell<Team>() {
+//                    @Override
+//                    protected void updateItem(Team item, boolean empty) {
+//                        super.updateItem(item, empty);
+//                        if (item != null) {
+//                            setText(item.getTeamName());
+//                        } else {
+//                            setText(null);
+//                        }
+//                    }
+//                };
+//            }
+//        });
+        teamComboBox.setConverter(new StringConverter<Team>() {
             @Override
-            public ListCell<Team> call(ListView<Team> param) {
-                return new ListCell<Team>() {
-                    @Override
-                    protected void updateItem(Team item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (item != null) {
-                            setText(item.getTeamName());
-                        } else {
-                            setText(null);
-                        }
-                    }
-                };
+            public String toString(Team team) {
+                return team == null ? null : team.getTeamName();
+            }
+
+            @Override
+            public Team fromString(String string) {
+                // 如果需要支持从字符串转为 Team 对象，可以在这里实现
+                return null;
             }
         });
+        teamComboBox.setValue(teamList.get(0));
         // 选择监听器，可以在选择不同团队时进行相应操作
         teamComboBox.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {

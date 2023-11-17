@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class TeamParser {
     private final String filePath;
@@ -32,6 +33,9 @@ public class TeamParser {
     }
 
     private Team parseTeam(String line) {
+        if (line.trim().isEmpty()) {
+            return null;  // 如果是空行，则返回 null
+        }
         String[] parts = line.split("_");
 
         String teamId = parts[1];
@@ -43,20 +47,23 @@ public class TeamParser {
         String creatorName = parts[6];
         String creatorPhoneNo = parts[7];
         String creatorEmail = parts[8];
-        Student creator = new Student(creatorId, creatorName, creatorPhoneNo, creatorEmail,
-                "", false, "", ""); // 你可能需要调整构造函数
+        String creatorStudentNo = parts[9];
+        boolean creatorStudentGender = Objects.equals(parts[10], "男");
+        String creatorGrade = parts[11];
+        String creatorDepartment = parts[12];
+        Student creator = new Student(creatorId, creatorName, creatorPhoneNo, creatorEmail,creatorStudentNo,creatorStudentGender,creatorGrade,creatorDepartment); // 你可能需要调整构造函数
 
         Team team = new Team(teamId, teamName, department, creator);
 
         // 学生
-        int studentStartIndex = 10;
-        while (parts[studentStartIndex].equals("Student")) {
+        int studentStartIndex = 13;
+        while (studentStartIndex< parts.length &&parts[studentStartIndex].equals("Student")) {
             String studentId = parts[studentStartIndex + 1];
             String studentName = parts[studentStartIndex + 2];
             String studentPhoneNo = parts[studentStartIndex + 3];
             String studentEmail = parts[studentStartIndex + 4];
             String studentNo = parts[studentStartIndex + 5];
-            boolean studentGender = Boolean.parseBoolean(parts[studentStartIndex + 6]);
+            boolean studentGender = Objects.equals(parts[studentStartIndex + 6],"男");
             String studentGrade = parts[studentStartIndex + 7];
             String studentDepartment = parts[studentStartIndex + 8];
 
@@ -64,7 +71,7 @@ public class TeamParser {
                     studentNo, studentGender, studentGrade, studentDepartment);
 
             team.addStudent(student);
-            studentStartIndex += 10; // 移动到下一个学生或教师
+            studentStartIndex += 9; // 移动到下一个学生或教师
         }
 
         // 教师
