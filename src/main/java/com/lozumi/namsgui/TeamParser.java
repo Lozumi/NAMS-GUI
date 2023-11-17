@@ -1,5 +1,8 @@
 package com.lozumi.namsgui;
-import com.lozumi.namsgui.model.*;
+
+import com.lozumi.namsgui.model.Student;
+import com.lozumi.namsgui.model.Team;
+import com.lozumi.namsgui.model.Teacher;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,13 +10,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * 团队解析器类，负责从文件中读取团队信息并解析为团队对象。
+ */
 public class TeamParser {
     private final String filePath;
 
+    /**
+     * 构造函数，初始化团队解析器，指定数据文件路径。
+     *
+     * @param filePath 数据文件路径
+     */
     public TeamParser(String filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * 从数据文件中读取团队信息并解析为团队对象列表。
+     *
+     * @return 团队对象列表
+     */
     public ArrayList<Team> readTeamsFromFile() {
         ArrayList<Team> teams = new ArrayList<>();
 
@@ -32,6 +48,12 @@ public class TeamParser {
         return teams;
     }
 
+    /**
+     * 解析一行数据为团队对象。
+     *
+     * @param line 数据文件中的一行数据
+     * @return 解析后的团队对象，如果解析失败返回 null
+     */
     private Team parseTeam(String line) {
         if (line.trim().isEmpty()) {
             return null;  // 如果是空行，则返回 null
@@ -51,19 +73,20 @@ public class TeamParser {
         boolean creatorStudentGender = Objects.equals(parts[10], "男");
         String creatorGrade = parts[11];
         String creatorDepartment = parts[12];
-        Student creator = new Student(creatorId, creatorName, creatorPhoneNo, creatorEmail,creatorStudentNo,creatorStudentGender,creatorGrade,creatorDepartment); // 你可能需要调整构造函数
+        Student creator = new Student(creatorId, creatorName, creatorPhoneNo, creatorEmail,
+                creatorStudentNo, creatorStudentGender, creatorGrade, creatorDepartment);
 
         Team team = new Team(teamId, teamName, department, creator);
 
         // 学生
         int studentStartIndex = 13;
-        while (studentStartIndex< parts.length &&parts[studentStartIndex].equals("Student")) {
+        while (studentStartIndex < parts.length && parts[studentStartIndex].equals("Student")) {
             String studentId = parts[studentStartIndex + 1];
             String studentName = parts[studentStartIndex + 2];
             String studentPhoneNo = parts[studentStartIndex + 3];
             String studentEmail = parts[studentStartIndex + 4];
             String studentNo = parts[studentStartIndex + 5];
-            boolean studentGender = Objects.equals(parts[studentStartIndex + 6],"男");
+            boolean studentGender = Objects.equals(parts[studentStartIndex + 6], "男");
             String studentGrade = parts[studentStartIndex + 7];
             String studentDepartment = parts[studentStartIndex + 8];
 
@@ -94,6 +117,11 @@ public class TeamParser {
         return team;
     }
 
+    /**
+     * 主方法，用于测试团队解析器。
+     *
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
         TeamParser teamFileReader = new TeamParser("team.dat");
         ArrayList<Team> teams = teamFileReader.readTeamsFromFile();

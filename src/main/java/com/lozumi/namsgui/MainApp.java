@@ -9,8 +9,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import com.lozumi.namsgui.TeamOverviewController;
-
+/**
+ * 主应用程序类，负责启动 JavaFX 应用程序和管理主界面。
+ */
 public class MainApp extends Application {
 
     private Stage primaryStage;
@@ -20,26 +21,25 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Team Management System");
+        this.primaryStage.setTitle("团队管理系统");
         initRootLayout();
         showTeamOverview();
     }
 
     /**
-     * Initializes the root layout.
+     * 初始化主界面的根布局。
      */
     public void initRootLayout() {
         try {
-            // Load root layout from fxml file.
+            // 从FXML文件加载根布局。
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
 
-            // Show the scene containing the root layout.
+            // 显示包含根布局的场景。
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,19 +47,19 @@ public class MainApp extends Application {
     }
 
     /**
-     * Shows the person overview inside the root layout.
+     * 在根布局内显示团队概览。
      */
     public void showTeamOverview() {
         try {
-            // Load person overview.
+            // 加载团队概览。
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/TeamOverview.fxml"));
             AnchorPane teamOverview = (AnchorPane) loader.load();
 
-            // Set person overview into the center of root layout.
+            // 设置团队概览为根布局的中心部分。
             rootLayout.setCenter(teamOverview);
 
-            // Give the controller access to the main app
+            // 将控制器访问主应用程序。
             TeamOverviewController teamOverviewController = loader.getController();
             teamOverviewController.setMainApp(this);
         } catch (IOException e) {
@@ -68,13 +68,19 @@ public class MainApp extends Application {
     }
 
     /**
-     * Returns the main stage.
-     * @return
+     * 返回主舞台。
+     *
+     * @return 主舞台
      */
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    /**
+     * 应用程序的入口点。
+     *
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
         launch(args);
     }

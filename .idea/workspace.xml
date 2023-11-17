@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2b6a7cd-213c-4d00-af39-3cc5aa227fe3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReadME.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/MainApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/view/PersonOverviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lozumi/namsgui/classes/Student.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lozumi/namsgui/classes/Teacher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lozumi/namsgui/classes/Team.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lozumi/namsgui/classes/User.class" afterDir="false" />
+    <list default="true" id="a2b6a7cd-213c-4d00-af39-3cc5aa227fe3" name="Changes" comment="feat: Show team info in resultTextArea">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/TeamOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/TeamOverviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/TeamParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lozumi/namsgui/TeamParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +32,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lozumi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="333fa588-2325-4f5d-942d-e70565b8a7e3" />
+        <option name="url" value="https://github.com/Lozumi/NAMS-GUI.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -64,31 +60,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/CS_Proj/IdeaProjects/School-Management-System-JavaFX&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AtomSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-19",
+    "last_opened_file_path": "E:/CS_Proj/IdeaProjects/NAMS-GUI/src/main/resources/com/lozumi/namsgui/classes",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CS_Proj\IdeaProjects\NAMS-GUI\src\main\resources\com\lozumi\namsgui\view" />
+      <recent name="E:\CS_Proj\IdeaProjects\NAMS-GUI\src\main\resources\com\lozumi\namsgui" />
       <recent name="E:\CS_Proj\IdeaProjects\NAMS-GUI\src\main\resources" />
       <recent name="E:\CS_Proj\IdeaProjects\NAMS-GUI\src\main\resources\fxml" />
       <recent name="E:\CS_Proj\IdeaProjects\NAMS-GUI\src\main\java\com\lozumi\namsgui\view" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.lozumi.namsgui" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -102,15 +104,144 @@
       <workItem from="1700071474071" duration="819000" />
       <workItem from="1700103481151" duration="8134000" />
       <workItem from="1700125949596" duration="1664000" />
-      <workItem from="1700204653392" duration="370000" />
+      <workItem from="1700204653392" duration="18397000" />
+      <workItem from="1700235901941" duration="6194000" />
     </task>
+    <task id="LOCAL-00001" summary="initial: Initial the project - Part.2">
+      <option name="closed" value="true" />
+      <created>1700206286520</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700206286520</updated>
+    </task>
+    <task id="LOCAL-00002" summary="initial: Initial the project - Part.2">
+      <option name="closed" value="true" />
+      <created>1700206349357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700206349357</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add: Add formatters">
+      <option name="closed" value="true" />
+      <created>1700234908060</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700234908060</updated>
+    </task>
+    <task id="LOCAL-00004" summary="delete: Delete initial project">
+      <option name="closed" value="true" />
+      <created>1700234963723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700234963723</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: Decompile classes">
+      <option name="closed" value="true" />
+      <created>1700234992231</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700234992231</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add: Design GUI and logic">
+      <option name="closed" value="true" />
+      <created>1700235025087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700235025087</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add: Add team parser">
+      <option name="closed" value="true" />
+      <created>1700235041149</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700235041149</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add: Add team info">
+      <option name="closed" value="true" />
+      <created>1700235052429</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700235052429</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Feat MainApp">
+      <option name="closed" value="true" />
+      <created>1700235076559</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700235076559</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: Feat controller of TeamOverview">
+      <option name="closed" value="true" />
+      <created>1700235186543</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700235186543</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: Let teamComboBox show only team names">
+      <option name="closed" value="true" />
+      <created>1700238348273</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700238348273</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: Let teamComboBox show only team names">
+      <option name="closed" value="true" />
+      <created>1700238492481</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700238492481</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: Show team info in resultTextArea">
+      <option name="closed" value="true" />
+      <created>1700239700645</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700239700645</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial: Initial the project - Part.2" />
+    <MESSAGE value="add: Add formatters" />
+    <MESSAGE value="delete: Delete initial project" />
+    <MESSAGE value="fix: Decompile classes" />
+    <MESSAGE value="add: Design GUI and logic" />
+    <MESSAGE value="add: Add team parser" />
+    <MESSAGE value="add: Add team info" />
+    <MESSAGE value="feat: Feat MainApp" />
+    <MESSAGE value="feat: Feat controller of TeamOverview" />
+    <MESSAGE value="feat: Let teamComboBox show only team names" />
+    <MESSAGE value="feat: Show team info in resultTextArea" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Show team info in resultTextArea" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NAMS_GUI$MainApp.ic" NAME="MainApp Coverage Results" MODIFIED="1700123076110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
