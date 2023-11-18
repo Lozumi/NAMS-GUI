@@ -145,16 +145,26 @@ public class TeamOverviewController {
     }
 
     /**
-     * 处理重置按钮点击事件。
+     * 重置按钮点击事件处理方法。
      */
     @FXML
     private void resetButtonClicked() {
-        // 重置 UI 元素
+        // 重置 UI 元素和相关对象
         resultTextArea.clear();
         plainTextRadioButton.setSelected(false);
         xmlRadioButton.setSelected(false);
         htmlRadioButton.setSelected(false);
+
+        // 清空已选择的文件
+        chosenFile = null;
+        chosenTextArea.clear();
+
+        // 清空已选择的团队和解析器对象
+        chosenTeam = null;
+        teamParser = null;
+        teamComboBox.getItems().clear();
     }
+
 
     // 弹出警告对话框的辅助方法
     private void showAlert(String message) {
