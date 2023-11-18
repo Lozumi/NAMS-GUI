@@ -61,6 +61,7 @@ public class TeamOverviewController {
     public void initialize() {
         // 设置欢迎信息
         guideTextFlow.getChildren().addAll(createColoredText("欢迎使用团队管理系统！本系统由Lozumi制作，当前版本1.0。\n请根据左侧边栏文字提示进行操作。",Color.GREEN));
+        scrollPane.setVvalue(scrollPane.getVmax());
     }
 
     /**
