@@ -1,6 +1,5 @@
 package com.lozumi.namsgui;
 
-import javafx.scene.layout.StackPane;
 import com.lozumi.namsgui.model.Team;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.scene.control.ScrollPane;
-
 
 import java.io.File;
 
@@ -60,7 +58,7 @@ public class TeamOverviewController {
     @FXML
     public void initialize() {
         // 设置欢迎信息
-        guideTextFlow.getChildren().addAll(createColoredText("欢迎使用团队管理系统！本系统由Lozumi制作，当前版本1.0。\n请根据左侧边栏文字提示进行操作。",Color.GREEN));
+        guideTextFlow.getChildren().addAll(createColoredText("欢迎使用团队管理系统！本系统由Lozumi制作，当前版本1.0。\n请根据左侧边栏文字提示进行操作。", Color.GREEN));
         scrollPane.setVvalue(scrollPane.getVmax());
     }
 
@@ -69,12 +67,17 @@ public class TeamOverviewController {
      */
     @FXML
     private void ChooseButtonClicked() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("选择数据文件");
-        chosenFile = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
-        if (chosenFile != null) {
-            chosenTextArea.setText("文件路径：" + chosenFile.getAbsolutePath());
-            appendSuccessText("选择成功！");
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("选择数据文件");
+            chosenFile = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
+            if (chosenFile != null) {
+                chosenTextArea.setText("文件路径：" + chosenFile.getAbsolutePath());
+                appendSuccessText("选择成功！");
+            }
+        } catch (Exception e) {
+            appendErrorText("选择按钮点击时出现异常：" + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -123,13 +126,18 @@ public class TeamOverviewController {
      */
     @FXML
     private void TeamComboBoxChosen() {
-        // 选择监听器，可以在选择不同团队时进行相应操作
-        teamComboBox.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> {
-                    showTeamDetails(newValue);
-                    chosenTeam = newValue;
-                    //appendSuccessText("选择了"+newValue+"~");
-                });
+        try {
+            // 选择监听器，可以在选择不同团队时进行相应操作
+            teamComboBox.getSelectionModel().selectedItemProperty().addListener(
+                    (observable, oldValue, newValue) -> {
+                        showTeamDetails(newValue);
+                        chosenTeam = newValue;
+                        //appendSuccessText("选择了"+newValue+"~");
+                    });
+        } catch (Exception e) {
+            appendErrorText("团队选择下拉框选项改变事件处理时出现异常：" + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -188,7 +196,6 @@ public class TeamOverviewController {
         }
     }
 
-
     // 弹出警告对话框的辅助方法
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -198,7 +205,7 @@ public class TeamOverviewController {
         alert.showAndWait();
     }
 
-    // 辅助方法，将异常信息添加到 guideTextArea 中，并设置为红色
+    // 辅助方法，将异常信息添加到 guideTextFlow 中，并设置为红色
     private void appendErrorText(String error) {
         Text errorText = new Text("\n" + error);
         errorText.setFill(Color.RED);
@@ -206,7 +213,7 @@ public class TeamOverviewController {
         scrollPane.setVvalue(scrollPane.getVmax());
     }
 
-    // 辅助方法，将异常信息添加到 guideTextArea 中，并设置为红色
+    // 辅助方法，将成功信息添加到 guideTextFlow 中，并设置为绿色
     private void appendSuccessText(String success) {
         Text successText = new Text("\n" + success);
         successText.setFill(Color.GREEN);
