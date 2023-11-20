@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b6a7cd-213c-4d00-af39-3cc5aa227fe3" name="Changes" comment="feat: Update ReadME">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teamComboBox way2.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +162,7 @@
       <workItem from="1700235901941" duration="9003000" />
       <workItem from="1700298563412" duration="247000" />
       <workItem from="1700310164556" duration="6619000" />
-      <workItem from="1700500869910" duration="271000" />
+      <workItem from="1700500869910" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="initial: Initial the project - Part.2">
       <option name="closed" value="true" />
@@ -317,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700501071949</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: Update ReadME">
+      <option name="closed" value="true" />
+      <created>1700501163521</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700501163521</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
