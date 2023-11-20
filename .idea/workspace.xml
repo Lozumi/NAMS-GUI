@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2b6a7cd-213c-4d00-af39-3cc5aa227fe3" name="Changes" comment="fix: Fix reset function">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a2b6a7cd-213c-4d00-af39-3cc5aa227fe3" name="Changes" comment="feat: Update ReadME">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +162,7 @@
       <workItem from="1700235901941" duration="9003000" />
       <workItem from="1700298563412" duration="247000" />
       <workItem from="1700310164556" duration="6619000" />
-      <workItem from="1700500869910" duration="140000" />
+      <workItem from="1700500869910" duration="197000" />
     </task>
     <task id="LOCAL-00001" summary="initial: Initial the project - Part.2">
       <option name="closed" value="true" />
@@ -301,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700286389320</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: Update ReadME">
+      <option name="closed" value="true" />
+      <created>1700501032707</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700501032707</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +341,8 @@
     <MESSAGE value="feat: Add Javadoc" />
     <MESSAGE value="feat: Complete ReadME" />
     <MESSAGE value="fix: Fix reset function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Fix reset function" />
+    <MESSAGE value="feat: Update ReadME" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Update ReadME" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NAMS_GUI$MainApp.ic" NAME="MainApp Coverage Results" MODIFIED="1700123076110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
