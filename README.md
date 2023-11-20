@@ -26,7 +26,7 @@ Using JavaFX 11 with JDK 19.
 
 ### Notes
 1. A method to show only the team names on teamComboBox.
-    ```java
+```java
      //设置下拉框中每个选项的显示内容，只显示团队名
         teamComboBox.setCellFactory(new Callback<ListView<Team>, ListCell<Team>>() {
             @Override
@@ -45,5 +45,3 @@ Using JavaFX 11 with JDK 19.
             }
         });
 ```
-
-
